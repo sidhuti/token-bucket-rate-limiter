@@ -1,7 +1,8 @@
 # ⚡ Token Bucket Rate Limiter Service
 
-An internal middleware service implementing a **Token Bucket Algorithm** for rate limiting requests across multiple internal endpoints.  
-This service ensures that internal APIs remain performant and resilient under load, by enforcing a global request rate limit.
+An internal middleware service implementing a **Token Bucket Algorithm** for rate limiting requests across multiple internal endpoints.
+
+This service ensures that internal APIs remain performant and resilient under load, by enforcing a global request rate limit per API.
 
 ## ⚙️ Core Assumptions
 
