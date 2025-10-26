@@ -1,21 +1,28 @@
-Token Bucket Rate Limiter Service
+# ⚡ Token Bucket Rate Limiter Service
 
-An Algorithm to implement Token Bucket Rate Limiting  for internal middleware that communicates with multiple internal endpoints.
+An internal middleware service implementing a **Token Bucket Algorithm** for rate limiting requests across multiple internal endpoints.  
+This service ensures that internal APIs remain performant and resilient under load, by enforcing a global request rate limit.
 
-Assumptions: 
+---
 
-1) Implementation of Global Rate Limiter and not geared to a particular user. 
+## ⚙️ Core Assumptions
 
-2) Each request consumes only one token.
+- 🌐 **Global Rate Limiter** — applies globally, not per-user or per-client.  
+- 🪙 **One Token per Request** — every request consumes exactly one token.  
+- 🔧 **Static Configuration** — configuration is loaded once at startup; changes require a service restart.  
+- 🧩 **Colon Syntax for Routes** — route templates use the `:param` format, e.g. `/users/:id`.  
 
-3) Configuration is loaded once during startup, any changes need a restart.
+--- 
 
-4) All Route templates use colon syntax (eg: :id) for paramters 
+## 🚀 Future Enhancements
 
-Possible Followups: 
+### 🔐 Per-Client Rate Limiting
+Extend the algorithm to handle:
+- IP-based throttling  
+- Authenticated client-based limits  
 
-1) Implement per-client rate limiting with IP/Authentication.
-
-2) Implement Logging Framework
-
-
+### 🧾 Logging Framework
+Integrate a structured logging layer to track:
+- Rejected requests  
+- Token bucket metrics 
+- Endpoint-level usage patterns  
